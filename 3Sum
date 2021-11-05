@@ -1,0 +1,23 @@
+class Solution {//Idea: Sort + treeset
+public: // Time/Space: O(N^2); O(N^3); Coding cost: 23 Lines of code
+    vector<vector<int>> threeSum(vector<int>& nums) {     
+        if(nums.size() < 3) return {};
+        sort(nums.begin(), nums.end());
+        set<vector<int>> vset;
+        for(auto i = nums.begin(); i != nums.end()-2; i++){
+            //if(i> nums.begin() && *i == *(i - 1)) continue;
+            auto j = i + 1, k = nums.end() - 1;
+            while(j < k){
+                int sum3 = *i + *j + *k;
+                if(sum3 < 0) j++;
+                else if(sum3 > 0) k--;
+                else{                    
+                    vset.insert({*i, *j, *k});
+                    j++;
+                    k--;
+                }
+            }            
+        }
+        return {vset.begin(), vset.end()};
+    }
+};
