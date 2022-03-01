@@ -47,44 +47,47 @@ class Solution
 {
     public:
     Node*reverse(Node*head){
-        Node*next=NULL;
         Node*prev=NULL;
-        Node*cur=head;
+        Node* next=NULL;
+        Node* cur=head;
         while(cur!=NULL){
             next=cur->next;
             cur->next=prev;
             prev=cur;
             cur=next;
         }
-        return prev;
+        cur=prev;
+        return cur;
     }
-    Node*addOne(Node *head) 
+    Node* addOne(Node *head) 
     {
-        
-        head=reverse(head);
-        bool f=true;
-        Node*cur=head;
-        while(cur!=NULL&& f==true){
-            if(cur->next==NULL&&cur->data==9){
-                cur->data=1;
-                Node*temp=new Node(0);
-                temp->next=head;
-                head=temp;
-                cur=cur->next;
+        // Your Code here
+        // return head of list after adding one
+         
+       head= reverse(head);
+       Node*cur=head;
+      bool f=true;
+        while(head!=NULL&&f==true){
+            if(head->next==NULL&&head->data==9){
+                head->data=1;
+                Node*dummy=new Node(0);
+                dummy->next=cur;
+                cur=dummy;
+                head=head->next;
             }
-            else if(cur->data==9){
-                cur->data=0;
-                cur=cur->next;
+            else if(head->data==9){
+                head->data=0;
+                head=head->next;
             }
             else{
-                cur->data=cur->data+1;
-                cur=cur->next;
+                head->data=head->data+1;
+                head=head->next;
                 f=false;
             }
         }
-        head=reverse(head);
-        return head;
-    }
+        cur=reverse(cur);
+            return cur;
+        }
     
 };
 
