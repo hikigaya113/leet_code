@@ -19,11 +19,11 @@ class Solution{
                 if(s == X){
                     return true;
                 }
-                if(s > X){
-                    high--;
+                if(s< X){
+                    low++;
                 }
                 else{
-                    low++;
+                    high--;
                 }
             }
         }
