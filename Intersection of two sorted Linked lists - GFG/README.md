@@ -1,5 +1,5 @@
 # Intersection of two sorted Linked lists
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given two lists sorted in increasing order, create a new list representing the intersection of the two lists. The new list should be made with its own memory — the original lists should not be changed.<br>
 <strong>Note:</strong> The list elements are not necessarily distinct.</span></p>
