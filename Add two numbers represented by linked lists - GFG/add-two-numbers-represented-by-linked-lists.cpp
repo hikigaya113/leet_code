@@ -60,55 +60,116 @@ struct Node {
 class Solution
 {
     public:
-      struct Node* reverseList(struct Node *head)
+      struct Node* reverse( Node *head)
    {
-       if(head==NULL||head->next==NULL)return head;
-       struct Node* temp=head->next;
-       struct Node* t=reverseList(temp);
-       temp->next=head;
-       head->next=NULL;
-       return t;
-   }
+      Node*prev=NULL;
+      Node*next=NULL;
+      Node*cur=head;
+       
+      while(cur!=NULL){
+          next=cur->next;
+          cur->next=prev;
+          prev=cur;
+          cur=next;
+      }
+      cur=prev;
+      return cur;
+  }
     
-    //Function to add two numbers represented by linked list.
+//     //Function to add two numbers represented by linked list.
     struct Node* addTwoLists(struct Node* first, struct Node* second)
     {
         
-        // code here
+//         // code here
        
-        struct Node* ans=new Node(0);
-        struct Node* curr=ans;
-        first=reverseList(first);
-        second=reverseList(second);
-        int carry=0;
-        while(first!=NULL||second!=NULL){   
-        int add=carry;
-            if(first!=NULL)
-            {
-            add+=first->data;
-            first=first->next;
-            }
-            if(second!=NULL)
-            {
-            add+=second->data;
-            second=second->next;
-            }
+//         Node* ans=new Node(0);
+//          Node* curr=ans;
+//         first=reverseList(first);
+//         second=reverseList(second);
+//         int carry=0;
+//         while(first!=NULL||second!=NULL){   
+//         int add=carry;
+//             if(first!=NULL)
+//             {
+//             add+=first->data;
+//             first=first->next;
+//             }
+//             if(second!=NULL)
+//             {
+//             add+=second->data;
+//             second=second->next;
+//             }
        
-            Node* temp=new Node(add%10);
-            carry=add/10;
+// //             Node* temp=new Node(add%10);
+// //             carry=add/10;
           
-                curr->next=temp;   ////////dding new node to answer string
-                curr=curr->next;
+// //                 curr->next=temp;   ////////dding new node to answer string
+// //                 curr=curr->next;
             
-        }
-        if(carry!=0){
-             Node* temp=new Node(carry);
-             curr->next=temp;
-        }
-        ans=ans->next;    ////////removing extra zero
-        ans=reverseList(ans);
+// //         }
+// //         if(carry!=0){
+// //              Node* temp=new Node(carry);
+// //              curr->next=temp;
+// //         }
+// //         ans=ans->next;    ////////removing extra zero
+// //         ans=reverseList(ans);
         
-        return ans;
+// //         return ans;
+
+
+
+// first=reverse(first);
+//         second=reverse(second);
+//          Node*dummy=new Node(0);
+//          Node*temp=dummy;
+//         int carry=0;
+//         while(carry||first!=NULL||second!=NULL){
+//             int sum=0;
+//             if(first!=NULL){
+//                 sum+=first->data;
+//                 first=first->next;
+//             }
+//             if(second!=NULL){
+//                 sum=sum+second->data;
+//                 second=second->next;
+                
+//             }
+//             sum+=carry;
+//             carry=sum/10;
+//             Node*bisht=new Node(sum%10);
+//             temp->next=bisht;
+//             temp=temp->next;
+            
+//         }
+//         Node*res=NULL;
+//         res=dummy->next;
+//         res=reverseList(res);
+//         return res;
+
+  first=reverse(first);
+  second=reverse(second);
+  Node*dummy=new Node(0);
+  Node*curr=dummy;
+  int carry=0;
+  while(first!=NULL||second!=NULL||carry){
+      int sum=0;
+      if(first!=NULL){
+          sum+=first->data;
+          first=first->next;
+      }
+      if(second!=NULL){
+          sum=sum+second->data;
+          second=second->next;
+      }
+      sum+=carry;
+      carry=sum/10;
+      Node*nya=new Node(sum%10);
+      curr->next=nya;
+      curr=curr->next;
+  }
+  Node*ans=dummy->next;
+  ans=reverse(ans);
+  return ans;
     }
 };
 
