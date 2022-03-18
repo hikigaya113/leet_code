@@ -12,21 +12,39 @@ class Solution{
     {
         //Your Code Here
      sort(arr,arr+n);
-        for(int i=0; i<n; i++){
-            int low = i+1, high = n-1;
-            while(low < high){
-                int s = arr[low] + arr[i] + arr[high];
-                if(s == X){
+        // for(int i=0; i<n; i++){
+        //     int low = i+1, high = n-1;
+        //     while(low < high){
+        //         int s = arr[low] + arr[i] + arr[high];
+        //         if(s == X){
+        //             return true;
+        //         }
+        //         if(s< X){
+        //             low++;
+        //         }
+        //         else{
+        //             high--;
+        //         }
+        //     }
+        // }
+        int s=0;
+        
+        for(int i=0;i<n;i++){
+            int low=i+1,high=n-1;
+           
+            while(low<high){
+                s=arr[i]+arr[low]+arr[high];
+                    if(s==X)
                     return true;
-                }
-                if(s< X){
+                
+                if(s<X){
                     low++;
                 }
-                else{
-                    high--;
-                }
+                else 
+                high--;
             }
         }
+        
         return false;
     }
 
