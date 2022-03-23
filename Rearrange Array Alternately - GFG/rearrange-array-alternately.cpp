@@ -28,8 +28,8 @@ class Solution{
     	        lef++;
     	        rig--;
     	    }
-    	    if(lef>rig)
-    	    v.push_back(arr[lef]);
+    	   // if(lef>rig)
+    	   // v.push_back(arr[lef]);
     	    for(int i=0;i<n;i++)
     	    arr[i]=v[i];
     	}
