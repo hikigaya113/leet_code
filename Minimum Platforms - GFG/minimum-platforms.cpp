@@ -13,7 +13,7 @@ class Solution{
     int findPlatform(int arr[], int dep[], int n)
     {
     	// Your code here
-    // 	int n = sizeof(arr)/sizeof(arr[0]);
+    // 	\
     // 	int ans=1;
     // 	for(int i=0;i<=n-1;i++){
     // 	    int count=1;
@@ -24,23 +24,41 @@ class Solution{
     // 	}
     // 	return ans;
     
-     sort(arr,arr+n);
-     sort(dep,dep+n);
-     int ans=1,count=1,i=1;
-     int j=0;
-     while(i<n&&j<n){
-         if(arr[i]<=dep[j]){
-             count++;
-             i++;
-         }
-         else{
-             count--;
-             j++;
-         }
-         ans=max(ans,count);
-     }
-     return ans;
+    //  sort(arr,arr+n);
+    //  sort(dep,dep+n);
+    //  int ans=1,count=1,i=1;
+    //  int j=0;
+    //  while(i<n&&j<n){
+    //      if(arr[i]<=dep[j]){
+    //          count++;
+    //          i++;
+    //      }
+    //      else{
+    //          count--;
+    //          j++;
+    //      }
+    //      ans=max(ans,count);
+    //  }
+    //  return ans;
+    
+    sort(arr,arr+n);
+    sort(dep,dep+n);
+    int ans=1,count=1,i=1;
+    int j=0;
+    while(i<n&&j<n)
+{
+    if(arr[i]<=dep[j]){
+        count++;
+        i++;
+    }
+    else{
+        count--;
+        j++;
+    }
+    ans=max(ans,count);
+}    
 
+return ans;
     }
 };
 
