@@ -95,59 +95,59 @@ class Solution {
   public:
     // Function to return the diameter of a Binary Tree.
     
-    // int height(Node*root){
-    //     if(root==NULL) return 0;
+    int height(Node*root){
+        if(root==NULL) return 0;
         
-    //     int leftHeight,rightHeight;
+        int leftHeight,rightHeight;
         
-    //     leftHeight=height(root->left);
-    //     rightHeight=height(root->right);
+        leftHeight=height(root->left);
+        rightHeight=height(root->right);
         
-    //     return max(leftHeight,rightHeight)+1;
+        return max(leftHeight,rightHeight)+1;
         
-    // }
+    }
     
-    // int diameter(Node* root) {
-    //     // Your code here
+    int diameter(Node* root) {
+        // Your code here
         
-    //     if(root==NULL) return 0;
+        if(root==NULL) return 0;
         
-    //     int leftDiameter=diameter(root->left);
-    //     int rightDiameter=diameter(root->right);
+        int leftDiameter=diameter(root->left);
+        int rightDiameter=diameter(root->right);
         
-    //     int currentHeight=height(root->left)+height(root->left)+1;
+        int currentHeight=height(root->left)+height(root->right)+1;
         
-    //     return max(currentHeight,max(leftDiameter,rightDiameter));
+        return max(currentHeight,max(leftDiameter,rightDiameter));
         
-    // }
+    }
     
-    int height(Node* root)
- {
-     // base case
-     if (root == NULL)
-     {
-         return 0;
-     }
+//     int height(Node* root)
+//  {
+//      // base case
+//      if (root == NULL)
+//      {
+//          return 0;
+//      }
      
-     int leftHeight = height(root -> left);
-     int rightHeight = height(root -> right);
+//      int leftHeight = height(root -> left);
+//      int rightHeight = height(root -> right);
      
-     return max(leftHeight, rightHeight) + 1;
+//      return max(leftHeight, rightHeight) + 1;
      
- }
-   // Function to return the diameter of a Binary Tree.
-   int diameter(Node* root) {
-       // base case
-       if(root == NULL)
-       {
-           return 0;
-       }
-       int leftDiameter = diameter(root -> left);
-       int rightDiameter = diameter(root -> right);
-       int currentDiameter = height(root -> left) + height(root -> right) + 1;
+//  }
+//   // Function to return the diameter of a Binary Tree.
+//   int diameter(Node* root) {
+//       // base case
+//       if(root == NULL)
+//       {
+//           return 0;
+//       }
+//       int leftDiameter = diameter(root -> left);
+//       int rightDiameter = diameter(root -> right);
+//       int currentDiameter = height(root -> left) + height(root -> right) + 1;
        
-       return max(currentDiameter , max(leftDiameter, rightDiameter));
-   }
+//       return max(currentDiameter , max(leftDiameter, rightDiameter));
+//   }
     
     
 };
