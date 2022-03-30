@@ -4,26 +4,29 @@ public:
         
         // wrong answer
         
-        // int n=nums.size();
-        // vector<vector<int>>ans;
-        // vector<int>v;
-        // sort(nums.begin(),nums.end());
-        // for(int i=0;i<n-2;i++){
-        //     for(int j=i+1;j<n-1;j++){
-        //        for(int k=j+1;k<n;k++){
-        //            v.clear();
-        //            if((nums[i]+nums[j]+nums[k])==0&&i!=j&&j!=k&&k!=i){
-        //                v.push_back(nums[i]);
-        //                v.push_back(nums[j]);
-        //                v.push_back(nums[k]);
-        //                 // ans.push_back(v);
-        //            }
-        //            if(v.size()!=0)
-        //            ans.push_back(v);
-        //        }
-        //     }
-        // }
-        // return ans;
+//         int n=nums.size();
+//         vector<vector<int>>ans;
+//         vector<int>v;
+//         sort(nums.begin(),nums.end());
+//         for(int i=0;i<n-2;i++){
+//             for(int j=i+1;j<n-1;j++){
+//                for(int k=j+1;k<n;k++){
+//                    v.clear();
+//                    if((nums[i]+nums[j]+nums[k])==0&&i!=j&&j!=k&&k!=i){
+//                        v.push_back(nums[i]);
+//                        v.push_back(nums[j]);
+//                        v.push_back(nums[k]);
+//                         // ans.push_back(v);
+//                    }
+//                    if(v.size()!=0)
+//                    ans.push_back(v);
+//                }
+//             }
+//         }
+        
+//         return ans;
+        
+        
         int n=nums.size();
         vector<vector<int>>ans;
         sort(nums.begin(),nums.end());
@@ -51,5 +54,7 @@ public:
         }
     }
     return ans;
-    }
+        }
+        
+    
 };
