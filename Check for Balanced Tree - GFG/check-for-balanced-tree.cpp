@@ -105,73 +105,28 @@ class Solution{
     public:
     //Function to check whether a binary tree is balanced or not.
     
-    // int height(Node*root){
+    int height(Node*root){
         
-    //     if(root==NULL)
-    //     return 0;
+        if(root==NULL) return 0;
         
-    //      int left_height,right_height;
+        int leftheight=height(root->left);
+        if(leftheight==-1) return -1;
         
-    //     left_height=height(root->left);
-    //     right_height=height(root->right);
+        int rightheight=height(root->right);
+        if(rightheight==-1) return -1;
         
-    //     return max(left_height,right_height)+1;
+        if(abs(leftheight-rightheight)>1) return -1;
         
-    // }
+        return max(leftheight,rightheight)+1;
+        
+    }
     
-    
-    // bool isBalanced(Node *root)
-    // {
-    //     //  Your Code here
+    bool isBalanced(Node *root)
+    {
+        //  Your Code here
         
-    //     if(root==NULL)
-    //     return 0;
-        
-       
-        
-    //     bool left=isBalanced(root->left);
-    //     bool right=isBalanced(root->right);
-        
-    //     bool diff=abs(height(root->left)-height(root->right))<=1;
-        
-        
-    //   if (left&&right&&diff) return true;
-    //   return false;
-        
-        
-        
-       
-       int height(Node * root)
-   {
-       if(root == NULL)
-       {
-           return 0;
-       }
-       int left_height = height(root->left);
-       int right_height = height(root->right);
-       
-       return max(left_height , right_height) + 1;
-   }
-   
-   bool isBalanced(Node *root)
-   { 
-       if(root == NULL)
-       {
-           return true;
-       }
-       bool left = isBalanced(root->left);
-       bool right = isBalanced(root->right);
-       bool diff = abs(height(root->left) - height(root->right)) <= 1;
-       
-       if(left && right && diff)
-       {
-           return true;
-       }
-       return false;
-   } 
-        
-        
-    
+        return height(root)!=-1;
+    }
 };
 
 
