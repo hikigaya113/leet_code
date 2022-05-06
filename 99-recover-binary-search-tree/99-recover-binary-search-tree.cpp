@@ -15,11 +15,11 @@ public:
     
     void markTree(TreeNode*root,TreeNode*&prev,TreeNode*&first,TreeNode*&end){
         
-        if(!root) return;
+        if(root==NULL) return;
         markTree(root->left,prev,first,end);
-            if(prev){
+            if(prev!=NULL){
                 if(root->val<prev->val){
-                    if(!first) first=prev;
+                    if(first==NULL) first=prev;
                     end=root;
             }
             
