@@ -24,7 +24,7 @@ class Solution
     public:
     //Function to check whether a Binary Tree is BST or not.
     
-    int prev=INT_MIN;
+    int prev=NULL;
     bool isBST(Node* root) 
     {
         // Your code here
