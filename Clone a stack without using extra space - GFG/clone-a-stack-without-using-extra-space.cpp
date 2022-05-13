@@ -13,12 +13,14 @@ class Solution{
     {
         //code here
         
-        if(st.empty()) return;
+        // if(st.empty()) return;
         
-        int num=st.top();
-        st.pop();
-        clonestack(st,cloned);
-        cloned.push(num);
+        // int num=st.top();
+        // st.pop();
+        // clonestack(st,cloned);
+        // cloned.push(num);
+        
+        cloned=st;
     }
 };
 
