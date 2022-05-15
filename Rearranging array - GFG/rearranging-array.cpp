@@ -14,8 +14,8 @@ class Solution{
        
        while(i<j){
            
-           answer[k++]=a[i++];
-           answer[k++]=a[j--];
+           answer[k]=a[i]; k++;i++;
+           answer[k]=a[j]; k++;j--;
        }
        if(i==j)
        answer[k++]=a[i++];
