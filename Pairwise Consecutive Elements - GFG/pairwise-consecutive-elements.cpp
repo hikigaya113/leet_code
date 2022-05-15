@@ -48,7 +48,7 @@ bool pairWiseConsecutive(stack<int> s)
     int m=s.top();
     s.pop();
     
-    if(abs(r-m)==1) return pairWiseConsecutive(s);
+    if(abs(r-m)==1) return true;
     
     else 
     return false;
