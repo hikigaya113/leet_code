@@ -6,7 +6,7 @@ public:
         int n=operations.size();
         
         for(int i=0;i<n;i++){
-            if(operations[i][1]=='-')
+            if(operations[i]=="X--" || operations[i]=="--X")
                 sum-=1;
             else
                 sum+=1;
