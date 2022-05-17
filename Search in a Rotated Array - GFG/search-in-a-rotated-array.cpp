@@ -5,16 +5,16 @@ using namespace std;
  // } Driver Code Ends
 class Solution{
     public:
-    int search(int nums[], int l, int h, int key){
+    int search(int A[], int l, int h, int key){
     //complete the function here
-    // int n=(sizeof(nums)/sizeof(*nums));
-    for(int i=0;i<h;i++){
-        if(nums[i]==key)
+    
+    
+    
+    for(int i=0;i<h-l+1;i++){
+        if(A[i]==key)
         return i;
-        
     }
     return -1;
-
     }
 };
 
