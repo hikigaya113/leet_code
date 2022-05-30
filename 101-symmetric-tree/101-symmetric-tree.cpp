@@ -14,16 +14,26 @@ public:
     bool isSymmetric(TreeNode* root) {
         
         if(root==NULL) return true;
-        return isSemmentricTest(root->right,root->left);     
+        return isSemmetricTest(root->right,root->left);     
         
     }
     
-    bool isSemmentricTest(TreeNode*p,TreeNode*q){
+//     bool isSemmentricTest(TreeNode*p,TreeNode*q){
         
-        if(p==NULL && q==NULL) return true;
-        if(p==NULL || q==NULL) return false;
+//         if(p==NULL && q==NULL) return true;
+//         if(p==NULL || q==NULL) return false;
+        
+//         if(p->val!=q->val) return false;
+//        return isSemmentricTest(p->right,q->left) && isSemmentricTest(p->left,q->right);
+//     }
+    
+    bool isSemmetricTest(TreeNode*p,TreeNode*q){
+        if(p==NULL&& q==NULL) return true;
+        
+        if(p==NULL||q==NULL) return false;
         
         if(p->val!=q->val) return false;
-       return isSemmentricTest(p->right,q->left) && isSemmentricTest(p->left,q->right);
+        
+        return isSemmetricTest(p->right,q->left)&&isSemmetricTest(p->left,q->right);
     }
 };
