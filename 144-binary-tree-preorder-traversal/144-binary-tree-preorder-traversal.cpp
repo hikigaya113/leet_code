@@ -15,7 +15,20 @@ public:
     vector<int>ans;
     vector<int> preorderTraversal(TreeNode* root) {
         
-        traversal(root);
+//         traversal(root);
+//         return ans;
+//     }
+    
+//     void traversal(TreeNode* root){
+        
+//         if(!root) return ;
+        
+//         ans.push_back(root->val);
+        
+//         traversal(root->left);
+//         traversal(root->right);
+    
+    traversal(root);
         return ans;
     }
     
@@ -24,7 +37,6 @@ public:
         if(!root) return ;
         
         ans.push_back(root->val);
-        
         traversal(root->left);
         traversal(root->right);
     }
