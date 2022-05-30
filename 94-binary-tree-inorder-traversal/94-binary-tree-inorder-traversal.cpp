@@ -13,20 +13,30 @@ class Solution {
 public:
     
    
-    
+     vector<int>ans;
     vector<int> inorderTraversal(TreeNode* root) {
-        vector<int>ans;
-        helper(root,ans);
+        // vector<int>ans;
+        // helper(root,ans);
+        // return ans;
+    
+//      void helper(TreeNode* root,vector<int>&res){
+        
+//         if(!root) return;
+            
+//             helper(root->left,res);
+//             res.push_back(root->val);
+//             helper(root->right,res);
+        
+       
+        traversal(root);
         return ans;
     }
-     void helper(TreeNode* root,vector<int>&res){
-        
+    
+    void traversal(TreeNode*root){
         if(!root) return;
-            
-            helper(root->left,res);
-            res.push_back(root->val);
-            helper(root->right,res);
-        
+        traversal(root->left);
+        ans.push_back(root->val);
+        traversal(root->right);
     }
     
 };
