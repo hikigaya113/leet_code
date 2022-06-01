@@ -10,22 +10,27 @@
  * };
  */
 class Solution {
-    private: TreeNode* prev=NULL;
 public:
     bool isValidBST(TreeNode* root) {
+        stack<TreeNode*>s;
+        TreeNode*prev=NULL;
         
-        return inorder(root);
-        
-    }
-    
-    bool inorder(TreeNode* root){
-        if(root==NULL) return true;
-        if(!inorder(root->left)) return false;
-        
-        if(prev!=NULL&&root->val<=prev->val)
-            return false;
-        prev=root;
-        return inorder(root->right);
-        
+        while(!s.empty() || root!=NULL){
+            
+            while(root!=NULL){
+                
+                s.push(root);
+                    root=root->left;
+            }
+            
+            root=s.top();
+            s.pop();
+            
+            if(prev!=NULL && root->val<=prev->val) return false;
+            
+            prev=root;
+            root=root->right;
+        }
+        return true;
     }
 };
