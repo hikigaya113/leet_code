@@ -10,7 +10,7 @@ public:
             
             x=x/10;
 }
-        if(sum>2147483648||sum<-2147483648)
+        if(sum>INT_MAX||sum<INT_MIN)
             return false;
         return sum;
     }
