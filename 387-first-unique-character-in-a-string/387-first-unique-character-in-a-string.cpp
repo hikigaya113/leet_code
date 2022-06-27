@@ -1,22 +1,13 @@
 class Solution {
-public:
-    int firstUniqChar(string s) {
-     
-        int n=s.length();
-      unordered_map<char,int>map;
+    public int firstUniqChar(String s) {
         
-        for(int i=0;i<n;i++){
-            if(map.count(s[i])==0)
-                map[s[i]]=1;
-            else
-                map[s[i]]++;
-        }
-        
-        for(int i=0;i<n;i++){
-            if(map[s.at(i)]==1)
+        for(int i=0;i<s.length();i++){
+
+            char c=s.charAt(i);
+            if(s.indexOf(c)==s.lastIndexOf(c))
                 return i;
-            
         }
-        return -1;
+         return -1;
     }
-};
+   
+}
