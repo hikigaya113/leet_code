@@ -14,10 +14,13 @@ public:
         
         if(head==NULL) return NULL;
         
-     ListNode*odd=head,*even=head->next,*evenHead=head->next;
+            ListNode* odd= head;
+            ListNode*even=head->next;
+            ListNode* evenHead=head->next;
         
         while(even!=NULL && even->next!=NULL){
             odd->next=odd->next->next;
+            
             even->next=even->next->next;
             
             odd=odd->next;
@@ -25,10 +28,5 @@ public:
         }
         odd->next=evenHead;
         return head;
-        
-        
-        
-        
-        
     }
 };
