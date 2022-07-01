@@ -15,18 +15,21 @@ class Solution{
     bool findTriplets(int arr[], int n)
     { 
         //Your code here
-        int p=0;
-       for(int p=0;p<n-2;p++){
-           for(int i=p+1;i<n-1;i++){
-             int diff=arr[p];
-            for(int j=i+1;j<n;j++){
-             if((arr[i]+arr[j]+diff)==0)
-             return 1;
-            }
-            
-        }
-       }
-        return 0;
+        sort(arr,arr+n);
+     
+     for(int i=0;i<n-2;i++){
+         int j=i+1,k=n-1;
+         
+         while(j<k){
+             if(arr[i]+arr[j]+arr[k]>0)
+             k--;
+             else if(arr[i]+arr[j]+arr[k]<0)
+             j++;
+             else 
+             return true;
+         }
+     }
+     return false;
     }
 };
 
