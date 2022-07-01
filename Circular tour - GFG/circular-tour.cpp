@@ -28,20 +28,28 @@ class Solution{
     {
        //Your code here
        
-    int pre=0,cur=0,start=0;
+    int sumP=0,sumD=0;
     
     for(int i=0;i<n;i++){
-        cur+=p[i].petrol-p[i].distance;
-        if(cur<0){
-            pre+=cur;
-            start=i+1;
-            cur=0;
+        sumP+=p[i].petrol;
+        sumD+=p[i].distance;
+    }
+    
+    if(sumP<sumD)
+    return -1;
+    
+    int index=-1,diff=0;
+    
+    for(int i=0;i<n;i++){
+        if(index==-1)
+        index=i;
+        
+        diff+=p[i].petrol-p[i].distance;
+        if(diff<0){
+            index=-1;diff=0;
         }
     }
-    return ((cur+pre)>=0)?(start):-1;
-           
-       
-           
+    return index;
         
     }
 };
