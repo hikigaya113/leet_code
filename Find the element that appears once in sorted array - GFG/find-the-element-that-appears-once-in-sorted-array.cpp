@@ -12,17 +12,24 @@ class Solution
     int findOnce(int arr[], int n)
     {
         //code here.
-        unordered_map<int,int>mp;
-        for(int i=0;i<n;i++){
-            mp[arr[i]]++;
-        }
-        for(auto it:mp){
-            if( it.second==1){
-                return it.first;
-            }
-        }
-        return -1;
+       // unordered_map<int,int>mp;
+        // for(int i=0;i<n;i++){
+        //     mp[arr[i]]++;
+        // }
+        // for(auto it:mp){
+        //     if( it.second==1){
+        //         return it.first;
+        //     }
+        // }
+        // return -1;
         
+        
+        for(int i=0;i<n;i+=2){
+            if(arr[i]!=arr[i+1])
+            return arr[i];
+           
+        }
+         return -1;
     }
 };
 
