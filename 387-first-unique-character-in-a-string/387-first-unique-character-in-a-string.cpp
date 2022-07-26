@@ -1,13 +1,12 @@
 class Solution {
-    public int firstUniqChar(String s) {
-        
-        for(int i=0;i<s.length();i++){
-
-            char c=s.charAt(i);
-            if(s.indexOf(c)==s.lastIndexOf(c))
-                return i;
-        }
-         return -1;
+public:
+    int firstUniqChar(string s) {
+        vector<int> v(26,0);
+		for(char c : s) v[c - 'a']++;
+		for(int i = 0; i < s.length(); i++){
+			if(v[s[i] - 'a'] == 1) return i;
+		}
+		return -1;
+    
     }
-   
-}
+};
